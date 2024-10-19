@@ -15,8 +15,8 @@ class WeatherController extends AbstractController
     public function city(
         LocationRepository $locationRepository,
         ForecastRepository $forecastRepository,
-        string $name,
         string $countryCode,
+        string $name,
     ): Response
     {
         $location = $locationRepository->findByCountryCodeAndName($countryCode, $name);

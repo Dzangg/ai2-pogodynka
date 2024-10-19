@@ -1,0 +1,48 @@
+App\Entity\Location:
+  properties:
+    name:
+      - NotBlank:
+          groups: ['new', 'edit']
+      - Length:
+          max: 255
+          groups: ['new', 'edit']
+    countryCode:
+      - NotBlank:
+          groups: ['new', 'edit']
+      - Length:
+          min: 2
+          max: 2
+          groups: ['new', 'edit']
+    latitude:
+      - NotBlank:
+          groups: ['new', 'edit']
+      - Range:
+          min: -90
+          max: 90
+          groups: ['new', 'edit']
+    longitude:
+      - NotBlank:
+          groups: ['new', 'edit']
+      - Range:
+          min: -180
+          max: 180
+          groups: ['new', 'edit']
+
+App\Entity\Forecast:
+  properties:
+    date:
+      - NotBlank:
+          groups: ['new', 'edit']
+      - Type:
+          type: \DateTimeInterface
+          groups: ['new', 'edit']
+    celsius:
+      - NotBlank:
+          groups: ['new', 'edit']
+      - Range:
+          min: -99
+          max: 99
+          groups: ['new', 'edit']
+    location:
+      - NotNull:
+          groups: ['new', 'edit']

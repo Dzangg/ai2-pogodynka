@@ -16,10 +16,10 @@ class Location
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: 'string', length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 2)]
+    #[ORM\Column(type: 'string', length: 2)]
     private ?string $countryCode = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 7)]

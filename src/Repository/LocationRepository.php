@@ -26,7 +26,7 @@ class LocationRepository extends ServiceEntityRepository
         ;
 
         $query = $qb->getQuery();
-        $result = $query->getResult();
+        $result = $query->getOneOrNullResult();
         return $result;
     }
 }

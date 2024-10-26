@@ -1,0 +1,13 @@
+{
+    "name": "{{ name }}",
+    "countryCode": "{{ countryCode }}",
+    "forecasts": [
+        {% for forecast in forecasts %}
+        {
+            "date": "{{ forecast.date.format("Y-m-d") }}",
+            "celsius": "{{ forecast.celsius }}",
+            "fahrenheit": "{{ forecast.fahrenheit }}"
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ]
+}

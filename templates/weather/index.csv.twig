@@ -1,0 +1,4 @@
+name,country,date,celsius,fahrenheit
+{% for forecast in forecasts %}
+{{ name }},{{ countryCode }},{{ forecast.date.format("Y-m-d") }},{{ forecast.celsius }},{{ forecast.fahrenheit }}
+{% endfor %}

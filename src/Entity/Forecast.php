@@ -64,4 +64,11 @@ class Forecast
 
         return $this;
     }
+
+    public function getFahrenheit(): ?string
+    {
+        $fahrenheit = ($this->celsius * 9 / 5) + 32;
+
+        return "$fahrenheit";
+    }
 }
